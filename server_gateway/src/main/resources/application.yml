@@ -1,0 +1,106 @@
+##服务端口
+#server:
+#  port: 9090
+#
+#spring:
+#  application:
+#    name: maxtunnel-gateway
+#  profiles:
+#    active: dev
+#  cloud:
+#    gateway:
+#      discovery:
+#        locator:
+#          enabled: true
+#      routes:
+#        # 路由到其他服务,url需要用[lb://]+[serviceId]
+#        # 认证中心
+#
+#        # shiro 模块
+#        - id: maxtunnel-shiro
+#          uri: lb://maxtunnel-shiro
+#          predicates:
+#            - Path=/auth/**
+#          filters:
+#            - StripPrefix=0 # 去除请求地址中的to_client
+#
+#        # em 模块
+#        - id: maxtunnel-em
+#          uri: lb://maxtunnel-em
+#          predicates:
+#            - Path=/em/**
+#          filters:
+#            - StripPrefix=0 # 去除请求地址中的to_client
+#            # 降级配置
+#            - name: Hystrix
+#              args:
+#                name: default
+#                fallbackUri: 'forward:/fallback'
+#
+#        # omm 模块
+#        - id: maxtunnel-omm
+#          uri: lb://maxtunnel-omm
+#          predicates:
+#            - Path=/omm/**
+#          filters:
+#            - StripPrefix=0 # 去除请求地址中的to_client
+#            # 降级配置
+#            - name: Hystrix
+#              args:
+#                name: default
+#                fallbackUri: 'forward:/fallback'
+#
+#        # common 模块
+#        - id: maxtunnel-common
+#          uri: lb://maxtunnel-common
+#          predicates:
+#            - Path=/common/**
+#          filters:
+#            - StripPrefix=0 # 去除请求地址中的to_client
+#            # 降级配置
+#            - name: Hystrix
+#              args:
+#                name: default
+#                fallbackUri: 'forward:/fallback'
+#
+#        # mam 模块
+#        - id: maxtunnel-mam
+#          uri: lb://maxtunnel-mam
+#          predicates:
+#            - Path=/mam/**
+#          filters:
+#            - StripPrefix=0 # 去除请求地址中的to_client
+#            # 降级配置
+#            - name: Hystrix
+#              args:
+#                name: default
+#                fallbackUri: 'forward:/fallback'
+#
+#        # oam 模块
+#        - id: maxtunnel-oam
+#          uri: lb://maxtunnel-oam
+#          predicates:
+#            - Path=/oam/**
+#          filters:
+#            - StripPrefix=0 # 去除请求地址中的to_client
+#            # 降级配置
+#            - name: Hystrix
+#              args:
+#                name: default
+#                fallbackUri: 'forward:/fallback'
+#
+#        # activiti 模块
+#        - id: maxtunnel-activiti
+#          uri: lb://maxtunnel-activiti
+#          predicates:
+#            - Path=/activiti/**
+#          filters:
+#            - StripPrefix=0 # 去除请求地址中的to_client
+#            # 降级配置
+#            - name: Hystrix
+#              args:
+#                name: default
+#                fallbackUri: 'forward:/fallback'
+#
+#
+#

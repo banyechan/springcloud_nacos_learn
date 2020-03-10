@@ -1,0 +1,37 @@
+#config 的参数配置文件
+#nacos 的 配置中心的参数设置 需写在 bootstrap.properties 中
+
+#服务名字
+spring:
+  application:
+    name: banyechan_gateway
+  #nacos
+  cloud:
+    nacos:
+      config:
+        server-addr: 127.0.0.1:8848
+        group: DEFAULT_GROUP
+        file-extension: yml
+        max-retry: 10
+        config-retry-time: 2333
+        config-long-poll-timeout: 6000
+        enable-remote-sync-config: false
+      discovery:
+        server-addr: 127.0.0.1:8848
+
+
+
+  # 主配置 group-id
+#spring.cloud.nacos.config.group=DEFAULT_GROUP
+#  # 主配置 配置文件类型
+#
+#  # 主配置 最大重试次数
+#spring.cloud.nacos.config.max-retry=10
+#  # 主配置 开启自动刷新
+#spring.cloud.nacos.config.auto-refresh=true
+#  # 主配置 重试时间
+#spring.cloud.nacos.config.config-retry-time=2333
+#  # 主配置 配置监听长轮询超时时间
+#spring.cloud.nacos.config.config-long-poll-timeout=46000
+#  # 主配置 开启注册监听器预加载配置服务（除非特殊业务需求，否则不推荐打开该参数）
+#nacos.config.enable-remote-sync-config=true
