@@ -20,9 +20,11 @@
     <description>nacos and spring boot 学习</description>
 
     <modules>
+        <module>server_gateway</module>
         <module>provide_server1</module>
         <module>provide_server2</module>
         <module>consumer_server1</module>
+        <module>consumer_server2</module>
     </modules>
 
     <properties>

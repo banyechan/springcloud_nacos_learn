@@ -1,0 +1,60 @@
+#server:
+#  port: 2030
+#
+#
+#spring:
+#  application:
+#    name: provide-server2
+#  cloud:
+#    nacos:
+#      discovery:
+#        server-addr: 127.0.0.1:8848
+#  # 数据源
+#  datasource:
+#    driver-class-name: com.mysql.jdbc.Driver
+#    username: root
+#    password: 123456
+#    url: jdbc:mysql://127.0.0.1:3306/banyechan?characterEncoding=utf8&useSSL=false
+#
+#
+#
+## mybaits 模块配置
+#mybatis:
+#  mapper-locations: classpath:mapper/*.xml
+#  type-aliases-package: com.banyechan.nacos.provide_server.entity
+#
+#
+#feign:
+#  hystrix:
+#    enabled: true
+#  client:
+#    config:
+#      feignName:
+#        connectTimeout: 60000
+#        readTimeout: 60000
+#  compression:
+#    request:
+#      enabled: true
+#    response:
+#      enabled: true
+#
+#
+#hystrix:
+#  command:
+#    default:    #default全局有效，service id指定应用有效
+#      execution:
+#        isolation:
+#          strategy: SEMAPHORE
+#          thread:
+#            timeoutInMilliseconds: 60000
+#  shareSecurityContext: true
+#
+##请求处理的超时时间
+#ribbon:
+#  ReadTimeout: 10000
+#  ConnectTimeout: 10000
+#
+#
+#banyechan:
+#  nacos:
+#    message: welcome to 北京

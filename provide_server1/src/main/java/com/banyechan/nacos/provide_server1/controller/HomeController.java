@@ -21,7 +21,7 @@ public class HomeController {
 
     @RequestMapping("/index")
     public String home() {
-        String result = "服务提供者。。。";
+        String result = "server1服务提供者。。。";
         return result;
     }
 
